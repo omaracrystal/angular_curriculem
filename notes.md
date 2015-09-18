@@ -83,7 +83,7 @@ formats the number 1234 with 2 decimal points using the number filter. The resul
 
 
 ## Adding more modules to your application
-1. add <script> code below original angularjs <script> tag in html
+1. add `<script>` code below original angularjs `<script>` tag in html
 1. Then update the js file
 ```
 // javascript array of dependences that you can add
