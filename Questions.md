@@ -15,6 +15,14 @@
 2. **View**: View represents this data.
 3. **Controller**: Controller mediates between the two.
 
+###Data Binding
+1. What does ng-model do?
+2. What is "dirty checking"?
+3. Find a way to set the initial value of "name" as "BoJack" (without writing a controller).
+4. What are those {{ }} expressions? Are they Handlebars?
+5. Explain what two-way data binding is.
+6. BONUS: Research the $digest loop
+
 
 
 
