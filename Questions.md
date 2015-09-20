@@ -16,8 +16,9 @@
 3. **Controller**: Controller mediates between the two.
 
 ###Data Binding
-1. What does ng-model do?
-2. What is "dirty checking"?
+1. What does `ng-model` do? The `ng-model` directive binds the value of HTML controls (input, select, textarea) to application data. The ng-model directive can also: Provide type validation for application data (number, email, required). Provide status for application data (invalid, dirty, touched, error). Provide CSS classes for HTML elements. The `ngModel` directive binds an input, select, textarea (or custom form control) to a property on the scope using NgModelController, which is created and exposed by this directive. ngModel is responsible for: Binding the view into the model, which other directives such as input, textarea or select require.
+
+2. What is "dirty checking"? The process of checking every `$watch` to detect the changes, is called dirty checking. It waits until something 
 3. Find a way to set the initial value of "name" as "BoJack" (without writing a controller).
 4. What are those {{ }} expressions? Are they Handlebars?
 5. Explain what two-way data binding is.

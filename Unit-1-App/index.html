@@ -1,24 +1,102 @@
 <!DOCTYPE html>
 <html ng-app>
   <head>
-    <title>{{ greeting }} World</title>
+    <title>Angular Unit 1</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-    <p>{{1 + 6}}<p>
-      <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
-      <p>{{ greeting }} world!</p>
 
-<!--       Angular -->
+<h1>Angular Unit 1</h1>
+  <!-- Expressions and Built-In Filters-->
+  <h2>Expressions and Built-In Filters</h2>
+  <br>
+  <br>
+     <div>Select below and see what happens:
+      <form>
+        <select ng-model="animals">
+          <option value="Dogs">Dogs</option>
+          <option value="Cats">Cats</option>
+          <option value="Dogs and Cats">Dogs and Cats</option>
+          <option value="Neither">Neither</option>
+        </select>
+        <p>I Love <b>{{animals}}</b></p>
+      </form>
+    </div>
+  <br>
+  <br>
+
+<div>
+  <p><i>Math= </i><b>{{ 1 + 6 }}</b></p>
+
+  <p><i>Concatenation=</i> My name is <b>{{"BoJack" + " Horseman"}}</b></p>
+
+  <p>The array [99,43,22] is <b>{{ [99,43,22].length }}</b> items long.</p>
+  <p>This is the array sorted= <b>{{ [99,43,22].sort() }}</b></p>
+
+  <p><i>**You cannot write conditionals or loops inside an expression. Keep in mind that you do not want to have complex logic in your views. If you want to run more complex code, we'll see how to move logic to a controller shortly.</i></p>
+  <br>
+
+  <p>Currency USD= <b>{{3.14159265359 | currency}}</b></p>
+  <p>Currency Euro= <b>{{3.14159265359 | currency:"&euro;"}}</b></p>
+<!--       Angular Input rounding numbers -->
+  <p>Round pi to 3 decimal places= <b>{{ 3.14159265359 | number:3 }}</b></p>
+  <br>
+
+  <p id="world">Say something to the world:
+    <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"> <b>{{ greeting }} world!</b></p>
+
+<br>
+
+<!--       Angular Input -->
+    <p> Angularize=
       <input type="text" ng-model="name" placeholder="What is your name?">
-      <h1>My name is: {{name}}</h1>
+      My name is: <b>{{name}}</b>
+    </p>
 
-<!--       Vanilla JS -->
+
+<!--       Vanilla JS Input -->
+    <p> Vanilla JS=
       <input type="text" placeholder="What is your name?" name="vanilla">
-      <h1>My name is: {{name}}</h1>
+      <span id="vanilla"></span>
+    </p>
 
+<br>
+<br>
 
+  <div>
+      <h4>Please say something:</h4>
+      <input type="text" ng-model="saySomething">
+      <p>Yelling: <b>{{saySomething | uppercase}}</b></p>
+      <p>Whispering: <b>{{saySomething | lowercase}}</b></p>
+  </div>
 
+<!-- Drop Down -->
+  <div ng-controller="PiDigits">
+<br>
+<br>
 
+      <h4>How many digits of pi do you want?</h4>
+    <select ng-model="digits">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+    <h3>{{ 3.14159265359 | number:digits }}</h3>
+
+    <ng-pluralize count="digits"
+      when="{'1': 'The first digit of pi!',
+       'other': 'The first {} digits of pi!'}">
+    </ng-pluralize>
+<br>
+<br>
+
+  </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js" type="text/javascript" charset="utf-8" async defer></script>

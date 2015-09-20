@@ -11,7 +11,7 @@ Angular.js makes sure we do not polute the global variable name space.
    Develop > Download
        Pick latest version
            Find angular.js file- readable code
-           Find angular.min.js- for quicker download, and saves a little bit more memory
+           Find angular.min.js- for quicker download, and saves a bit more memory
        Copy link for angular.min.js input into script tags on html view page
 1. Setup up index.html and app.js
 1. In app.js start building angular.js app. Because we do not want to poplute the global variable name space, we are only going to set up one variable in the global name space. This variable is our app, our application.
