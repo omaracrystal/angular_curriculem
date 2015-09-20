@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="myApp">
   <head>
     <title>Angular Unit 1</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-
-<h1>Angular Unit 1</h1>
-  <!-- Expressions and Built-In Filters-->
-  <h2>Expressions and Built-In Filters</h2>
-  <br>
-  <br>
-     <div>Select below and see what happens:
+    <h1>Angular Unit 1</h1>
+    <!-- Expressions and Built-In Filters-->
+    <h2>Expressions and Built-In Filters</h2>
+    <br>
+    <br>
+    <div>Select below and see what happens:
       <form>
         <select ng-model="animals">
           <option value="Dogs">Dogs</option>
@@ -24,83 +22,204 @@
         <p>I Love <b>{{animals}}</b></p>
       </form>
     </div>
-  <br>
-  <br>
-
-<div>
-  <p><i>Math= </i><b>{{ 1 + 6 }}</b></p>
-
-  <p><i>Concatenation=</i> My name is <b>{{"BoJack" + " Horseman"}}</b></p>
-
-  <p>The array [99,43,22] is <b>{{ [99,43,22].length }}</b> items long.</p>
-  <p>This is the array sorted= <b>{{ [99,43,22].sort() }}</b></p>
-
-  <p><i>**You cannot write conditionals or loops inside an expression. Keep in mind that you do not want to have complex logic in your views. If you want to run more complex code, we'll see how to move logic to a controller shortly.</i></p>
-  <br>
-
-  <p>Currency USD= <b>{{3.14159265359 | currency}}</b></p>
-  <p>Currency Euro= <b>{{3.14159265359 | currency:"&euro;"}}</b></p>
-<!--       Angular Input rounding numbers -->
-  <p>Round pi to 3 decimal places= <b>{{ 3.14159265359 | number:3 }}</b></p>
-  <br>
-
-  <p id="world">Say something to the world:
-    <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"> <b>{{ greeting }} world!</b></p>
-
-<br>
-
-<!--       Angular Input -->
-    <p> Angularize=
-      <input type="text" ng-model="name" placeholder="What is your name?">
-      My name is: <b>{{name}}</b>
-    </p>
-
-
-<!--       Vanilla JS Input -->
-    <p> Vanilla JS=
-      <input type="text" placeholder="What is your name?" name="vanilla">
-      <span id="vanilla"></span>
-    </p>
-
-<br>
-<br>
-
-  <div>
-      <h4>Please say something:</h4>
-      <input type="text" ng-model="saySomething">
-      <p>Yelling: <b>{{saySomething | uppercase}}</b></p>
-      <p>Whispering: <b>{{saySomething | lowercase}}</b></p>
-  </div>
-
-<!-- Drop Down -->
-  <div ng-controller="PiDigits">
-<br>
-<br>
-
-      <h4>How many digits of pi do you want?</h4>
-    <select ng-model="digits">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-    </select>
-    <h3>{{ 3.14159265359 | number:digits }}</h3>
-
-    <ng-pluralize count="digits"
-      when="{'1': 'The first digit of pi!',
-       'other': 'The first {} digits of pi!'}">
-    </ng-pluralize>
-<br>
-<br>
-
-  </div>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js" type="text/javascript" charset="utf-8" async defer></script>
-
-    <script src="main.js" type="text/javascript"></script>
-    </body>
-  </html>
+    <br>
+    <br>
+    <p><i>Math= </i><b>{{ 1 + 6 }}</b></p>
+    <p><i>Concatenation=</i> My name is <b>{{"BoJack" + " Horseman"}}</b></p>
+    <p>The array [99,43,22] is <b>{{ [99,43,22].length }}</b> items long.</p>
+    <p>This is the array sorted= <b>{{ [99,43,22].sort() }}</b></p>
+    <p><i>**You cannot write conditionals or loops inside an expression. Keep in mind that you do not want to have complex logic in your views. If you want to run more complex code, we'll see how to move logic to a controller shortly.</i></p>
+    <br>
+    <p>Currency USD= <b>{{3.14159265359 | currency}}</b></p>
+    <p>Currency Euro= <b>{{3.14159265359 | currency:"&euro;"}}</b></p>
+    <!--       Angular Input rounding numbers -->
+    <p>Round pi to 3 decimal places= <b>{{ 3.14159265359 | number:3 }}</b></p>
+    <br>
+    <p id="world">Say something to the world:
+      <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"> <b>{{ greeting }} world!</b></p>
+      <br>
+      <!--       Angular Input -->
+      <p> Angularize=
+        <input type="text" ng-model="name" placeholder="What is your name?">
+        My name is: <b>{{name}}</b>
+      </p>
+      <!--       Vanilla JS Input -->
+      <p> Vanilla JS=
+        <input type="text" placeholder="What is your name?" name="vanilla">
+        <span id="vanilla"></span>
+      </p>
+      <br>
+      <br>
+      <div>
+        <h4>Please say something:</h4>
+        <input type="text" ng-model="saySomething">
+        <p>Yelling: <b>{{saySomething | uppercase}}</b></p>
+        <p>Whispering: <b>{{saySomething | lowercase}}</b></p>
+      </div>
+      <!-- Drop Down -->
+      <div ng-controller="PiDigits">
+        <br>
+        <br>
+        <div>
+          How many digits of PI do you want?
+          <select class="digits" name="digits" ng-model="digits">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+          <p>
+            Here
+            <ng-pluralize count="digits"
+            when="{'1': 'is',
+            'other': 'are'}"></ng-pluralize>
+            the first {{ digits }}
+            <ng-pluralize count="digits"
+            when="{'1': 'digit',
+            'other': 'digits'}"></ng-pluralize>
+            of PI <b>{{ 3.14159265359 | number:digits }}</b>
+          </p>
+        </div>
+        <br>
+        <br>
+        <div>
+          <h3><b>Angular Tip Calculator</b></h3>
+          <p>How much was your meal? <input type="text" ng-model="meal"></p>
+          <p>How much for a tip?
+            <select class="tip" name="tip" ng-model="tip">
+              <option value="0.1">10%</option>
+              <option value="0.15">15%</option>
+              <option value="0.2">20%</option>
+              <option value="0.25">25%</option>
+            </select>
+          </p>
+          <p>Subtotal: <b>{{ meal | currency }}</b></p>
+          <p>Tip: <b>{{ meal * tip | currency }}</b></p>
+        </div>
+        <br>
+        <br>
+        <div>
+          <h3><b>Angular Madlibs</b></h3>
+          <p>Boy's Name
+            <input type="text" placeholder="Enther a boy's name .." ng-model="name">
+          </p>
+          <p>Adjective
+            <input type="text" placeholder="Enter an adjective .." ng-model="adjective">
+          </p>
+          <p>Plural noun
+            <input type="text" placeholder="Enter a plural noun .." ng-model="firstNoun">
+          </p>
+          <p>Plural noun
+            <input type="text" placeholder="Enter a plural noun .." ng-model="secondNoun">
+          </p>
+          <p>An insect (plural)
+            <input type="text" placeholder="Enter a plural insect .." ng-model="insect">
+          </p>
+          <p>A verb ending in "s"
+            <input type="text" placeholder="Enter a verb ending in 's'" ng-model="verb">
+          </p>
+          <p>
+            I'm in love with
+            {{ name | uppercase}}.
+            He's so
+            {{ adjective | uppercase}}!
+            He has big flat
+            {{ firstNoun | uppercase }},
+            and when our
+            {{ secondNoun | uppercase }}
+            meet, I get
+            {{ insect | uppercase }}
+            in my stomach. I've fallen for him like a ton of
+            {{ verb | uppercase }},
+            and he shuffles for me too. But I think he's got another girlfriend. What should I do?
+          </p>
+        </div>
+        <h3>ng-repeat</h3>
+        <h4>Hogwarts</h4>
+        <div ng-controller="hogwarts">
+          <ul>
+            <li ng-repeat="name in names">
+              <b>{{ name }}</b>
+            </li>
+          </ul>
+        </div>
+        <br>
+        <h4>Symbols</h4>
+        <div ng-controller="symbols">
+          <ul>
+            <li ng-repeat="symbol in symbols">
+              {{ symbol }}
+            </li>
+          </ul>
+        </div>
+        <br>
+        <h4>Numbers</h4>
+        <div ng-controller="numbers">
+          <ul>
+            <li ng-repeat="num in nums track by $index">
+              {{ num }}
+            </li>
+          </ul>
+        </div>
+        <br>
+        <h4>Ordered list student.name and student.age</h4>
+        <div ng-controller="person">
+          <ol>
+            <li ng-repeat="student in students">
+              {{ student.name }}
+              {{ student.age }}
+            </li>
+          </ol>
+        </div>
+        <br>
+        <h4>Hide or Show</h4>
+        <div ng-show="3 + 4 == 5">
+          3 + 4 isn't 5, don't show
+        </div>
+        <div ng-show="3 + 4 == 7">
+          3 + 4 is 7, do show
+        </div>
+        <div ng-hide="3 + 4 == 5">
+          3 + 4 isn't 5, don't hide
+        </div>
+        <div ng-hide="3 + 4 == 7">
+          3 + 4 is 7, do hide
+        </div>
+        <br>
+        <h2>Sign up</h2>
+        <input type="password" name="password" ng-model="pswrd" ng-class="{invalid: pswrd.length < 6, valid: pswrd.length > 5}">
+        <button ng-show="pswrd.length > 5">Sign up!</button>
+        <span class="invalid"  ng-show="pswrd.length <= 5">This password is invalid!</span>
+        <br>
+        <span ng-show="pswrd.length > 0" ng-class="{invalid: pswrd.length < 6, valid: pswrd.length > 5}">Your password is {{ pswrd.length }}
+          <ng-pluralize count="pswrd.length"
+          when="{'1': 'character',
+          'other': 'characters'}">
+        </span>
+        <br>
+        <br>
+        <div ng-controller="camera">
+          <h2>Camera Shop</h2>
+          <span>Sort By:</span>
+          <select ng-model="selected">
+            <option value="rating">rating</option>
+            <option value="price">price</option>
+          </select>
+          <div ng-repeat="camera in cameras | orderBy: selected">
+            <h3>{{ camera.title }}</h3>
+            <p ng-class="{highlight: camera.onSale === true}">
+              {{ camera.price | currency }}
+              <span ng-show="camera.onSale === true"> ON SALE!</span>
+            </p>
+            <p>{{ camera.rating }}</p>
+            <img ng-src="{{ camera.image }}">
+          </div>
+        </div>
+        <!-- ** END EXERCISE 1.5 ** -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js" type="text/javascript" charset="utf-8" async defer></script>
+        <script src="main.js" type="text/javascript"></script>
+      </body>
+    </html>

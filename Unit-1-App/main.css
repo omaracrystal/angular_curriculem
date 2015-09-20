@@ -19,9 +19,14 @@ h2 {
 
 h3 {
   font-size: 18px;
+  margin-left: -5%;
 }
 
 p {
   font-size: 16px;
 }
 
+img {
+  max-width: 20%;
+  max-height: 20%;
+}
