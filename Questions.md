@@ -55,7 +55,31 @@ At the end of $apply, Angular performs a $digest cycle on the root scope, which 
 
 When child scopes are no longer needed, it is the responsibility of the child scope creator to destroy them via scope.$destroy() API. This will stop propagation of $digest calls into the child scope and allow for memory used by the child scope models to be reclaimed by the garbage collector.
 
+#Unit 2 
+##Questions A New Structure
+1. What are possible issues with this new file structure?
+```
+app
+├── css
+├── index.html
+└── js
+    ├── app.js
+    ├── controllers.js
+    ├── directives.js
+    ├── filters.js
+    └── services.js
+```
 
+2. When thinking about extending the single responsibility principle to the app structure, what are some other ways that the app could be structured?
+3. What are the differences between serving files from an http server and from the file system? It seemed to work fine with just open index.html in the browser...
+4. Reflecting on the new structure and thinking back to lesson 1 - is Angular an MVC framework? How does the app structure support/disprove that?
+
+##Questions Routing
+1. Why isn't `ngRoute` part of Angular core? Name at least 2 other Angular modules we could use
+2. Compare and contrast client-side routing with server-side routing
+3. Aside from route definitions, what else can go in a `.config()`?
+4. What is `$rootScope`?
+5. What is the `$routeChangeSuccess` event?
 
 
 
