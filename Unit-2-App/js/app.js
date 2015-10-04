@@ -1,6 +1,6 @@
 //declare angular app and all it's dependencies
 
-var app = angular.module('whateverYourModuleNameIs', ['ngRoute']);
+var app = angular.module("yourAppName", ['ngRoute']);
 
 
 app.config(function($routeProvider) {
